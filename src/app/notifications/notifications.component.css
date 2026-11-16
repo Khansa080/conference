@@ -1,0 +1,3 @@
+.panel { --c: #f59e0b; --ic: #fff3d6; }
+.btn { background: var(--navy); margin-top: .5rem; }
+ul { margin: .8rem 0 0 1.2rem; }

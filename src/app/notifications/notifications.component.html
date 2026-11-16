@@ -1,0 +1,21 @@
+<section class="panel" id="notifications">
+  <div class="icon">🔔</div>
+  <div class="body">
+    <h2>Zone de notifications</h2>
+    @if (notifications.length > 0) {
+      <p>Vous avez {{ notifications.length }} nouvelles notifications.</p>
+    } @else {
+      <p class="muted">Aucune notification.</p>
+    }
+    <button class="btn" (click)="show = !show">
+      {{ show ? 'Masquer les notifications' : 'Afficher les notifications' }}
+    </button>
+    @if (show) {
+      <ul>
+        @for (n of notifications; track n) {
+          <li>{{ n }}</li>
+        }
+      </ul>
+    }
+  </div>
+</section>

@@ -1,0 +1,12 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+}
+nav a { color: var(--text); text-decoration: none; margin-left: 1.5rem; }
+nav a:hover { color: var(--primary); }

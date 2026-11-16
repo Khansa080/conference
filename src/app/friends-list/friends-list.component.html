@@ -1,0 +1,17 @@
+<section class="panel" id="friends">
+  <div class="icon">👥</div>
+  <div class="body">
+    <h2>Liste des amis</h2>
+    <div class="inputs">
+      <input type="text" [(ngModel)]="name" />
+      <input type="text" [(ngModel)]="name" />
+      <input type="text" [(ngModel)]="name" />
+    </div>
+    <p class="muted">Valeur saisie : {{ name }}</p>
+    <ul>
+      @for (f of friends; track f) {
+        <li>{{ f }}</li>
+      }
+    </ul>
+  </div>
+</section>

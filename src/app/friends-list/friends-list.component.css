@@ -1,0 +1,4 @@
+.panel { --c: #16a34a; --ic: #e8f6ee; }
+.inputs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .5rem; }
+input { padding: .4rem .7rem; border: 1px solid #cbd5e1; border-radius: 8px; }
+ul { margin: .5rem 0 0 1.2rem; }

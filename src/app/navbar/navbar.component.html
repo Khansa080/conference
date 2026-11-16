@@ -1,0 +1,5 @@
+<nav>
+  @for (l of links; track l.label) {
+    <a [href]="l.href" [class.active]="l.label === active" (click)="active = l.label">{{ l.label }}</a>
+  }
+</nav>
