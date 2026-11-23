@@ -2,17 +2,19 @@
   <div class="icon">📅</div>
   <div class="body">
     <h2>Liste des conférences à venir</h2>
+    <p class="muted">Cliquez sur une conférence pour afficher ses détails.</p>
 
     <input class="search" type="text" placeholder="Taper le titre de la conférence" [(ngModel)]="search" />
 
     <div class="cards">
       @for (c of filtered; track c.id) {
-        <article class="conf">
+        <article class="conf" [class.selected]="c === selected" (click)="select(c)">
           <h3>{{ c.title | uppercase }}</h3>
           <p><b>Date :</b> {{ c.date | date: 'dd/MM/yyyy' }}</p>
           <p><b>Lieu :</b> {{ c.place }}</p>
           <p><b>Places restantes :</b> {{ remaining(c) }}</p>
-          <button class="btn" [ngClass]="btnClass(c)" (click)="register(c)">S'inscrire</button>
+          <button class="btn" [ngClass]="btnClass(c)"
+                  (click)="register(c); $event.stopPropagation()">S'inscrire</button>
         </article>
       } @empty {
         <p class="muted">Aucune conférence à afficher.</p>
@@ -20,3 +22,6 @@
     </div>
   </div>
 </section>
+
+<!-- Composant imbriqué : le parent envoie la conférence (@Input) et écoute l'inscription (@Output) -->
+<app-conference-details [conference]="selected" (registered)="register($event)" />

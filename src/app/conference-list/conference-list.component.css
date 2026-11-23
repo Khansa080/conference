@@ -4,7 +4,9 @@
           border: 2px solid #e2e8f0; border-radius: 12px; outline: none; }
 .search:focus { border-color: var(--blue); }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-.conf { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.2rem; }
+.conf { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.2rem;
+        cursor: pointer; transition: .2s; }
+.conf:hover, .conf.selected { border-color: #93c5fd; box-shadow: var(--shadow); }
 h3 { color: var(--navy); margin-bottom: .6rem; }
 .btn { margin-top: .6rem; }
 .green { background: #15803d; }

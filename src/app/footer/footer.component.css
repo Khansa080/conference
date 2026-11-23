@@ -1,1 +1,20 @@
-footer { background: #17375e; color: #fff; text-align: center; padding: 1.5rem 1rem; margin-top: 1.5rem; }
+footer {
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+  padding: 1.8rem 1rem;
+  color: rgba(255, 255, 255, .82);
+  font-size: .92rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--navy), var(--navy-soft) 60%, #1e40af);
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, #22d3ee, #3b82f6, #818cf8);
+}
+
+footer p { position: relative; }

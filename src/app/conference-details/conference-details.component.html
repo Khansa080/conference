@@ -1,0 +1,17 @@
+<section class="panel">
+  <div class="icon">🎤</div>
+  <div class="body">
+    <h2>Détail de la conférence</h2>
+    @if (conference) {
+      <p class="info">Conférence sélectionnée depuis la liste.</p>
+      <p><b>Titre :</b> {{ conference.title }}</p>
+      <p><b>Description :</b> {{ conference.description }}</p>
+      <p><b>Lieu :</b> {{ conference.place }}</p>
+      <p><b>Date :</b> {{ conference.date | date: 'yyyy-MM-dd' }}</p>
+      <p><b>Places disponibles :</b> {{ remaining }}</p>
+      <button class="btn" [disabled]="remaining === 0" (click)="onRegister()">S'inscrire</button>
+    } @else {
+      <p class="muted">Aucune conférence sélectionnée. Cliquez sur une conférence dans la liste.</p>
+    }
+  </div>
+</section>

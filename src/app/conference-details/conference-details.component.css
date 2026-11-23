@@ -1,0 +1,5 @@
+:host { display: block; }
+.panel { --c: #7c3aed; --ic: #f1e8ff; }
+.info { display: inline-block; background: #eaf4ff; color: #2d6cb0; font-weight: 600;
+        padding: .4rem .9rem; border-radius: 8px; margin-bottom: .8rem; }
+.btn { background: var(--navy); margin-top: .8rem; }

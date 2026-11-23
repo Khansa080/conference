@@ -1,1 +1,16 @@
-.panel { --c: #2d6cb0; }
+.panel { --c: #2563eb; --ic: #dbeafe; }
+
+.panel .icon { font-size: 2.1rem; }
+
+p {
+  margin: .35rem 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+p b {
+  display: inline-block;
+  min-width: 68px;
+  color: var(--navy);
+  font-weight: 600;
+}

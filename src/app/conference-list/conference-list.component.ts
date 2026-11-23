@@ -2,16 +2,18 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, NgClass, UpperCasePipe } from '@angular/common';
 import { Conference } from '../models/conference';
+import { ConferenceDetailsComponent } from '../conference-details/conference-details.component';
 
 @Component({
   selector: 'app-conference-list',
   standalone: true,
-  imports: [FormsModule, NgClass, UpperCasePipe, DatePipe],
+  imports: [FormsModule, NgClass, UpperCasePipe, DatePipe, ConferenceDetailsComponent],
   templateUrl: './conference-list.component.html',
   styleUrl: './conference-list.component.css',
 })
 export class ConferenceListComponent {
   search = '';
+  selected: Conference | null = null; // conférence sélectionnée, envoyée au composant de détail
 
   conferences: Conference[] = [
     { id: 1, title: 'Angular 21 Conference', description: "Les nouveautés d'Angular 21.",
@@ -37,6 +39,10 @@ export class ConferenceListComponent {
   btnClass(c: Conference): string {
     const r = this.remaining(c);
     return r === 0 ? 'red' : r < 10 ? 'orange' : 'green';
+  }
+
+  select(c: Conference) {
+    this.selected = c;
   }
 
   register(c: Conference) {
